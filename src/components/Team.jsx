@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import { Bible } from "lucide-react";
+import { BookOpen } from "lucide-react";
 
 const Team = () => {
   const [api, setApi] = useState(null);
@@ -72,7 +72,7 @@ const Team = () => {
                 >
                   <Card className="border-2 border-church-primary/20">
                     <CardContent className="p-8 text-center">
-                      <Bible className="w-12 h-12 mx-auto mb-4 text-church-primary" />
+                      <BookOpen className="w-12 h-12 mx-auto mb-4 text-church-primary" />
                       <h3 className="text-2xl font-bold mb-4">{point.title}</h3>
                       <p className="text-gray-600 mb-4">{point.description}</p>
                       <p className="text-church-primary font-semibold italic">{point.verse}</p>
