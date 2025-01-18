@@ -34,7 +34,7 @@ const Team = () => {
     if (!api) return;
 
     const interval = setInterval(() => {
-      api.next();
+      api.scrollNext();
     }, 5000);
 
     return () => clearInterval(interval);
