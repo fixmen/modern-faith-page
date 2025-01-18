@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import { BookOpen } from "lucide-react";
+import { Search, Sun } from "lucide-react";
 
 const Team = () => {
   const [api, setApi] = useState(null);
@@ -17,16 +17,19 @@ const Team = () => {
       title: "Fidelidad a la Palabra",
       verse: '"Tu palabra es verdad." - Juan 17:17',
       description: "Nos comprometemos a mantener una doctrina pura y sin adulterar, basada únicamente en la Palabra de Dios.",
+      icon: Search
     },
     {
       title: "Hablar donde la Biblia Habla",
       verse: '"Si alguno habla, hable conforme a las palabras de Dios." - 1 Pedro 4:11',
       description: "Nos mantenemos fieles al principio de hablar donde la Biblia habla y callar donde ella calla.",
+      icon: Search
     },
     {
       title: "Autoridad Divina",
       verse: '"Toda la Escritura es inspirada por Dios." - 2 Timoteo 3:16',
       description: "Seguimos los mandamientos de Dios, no las tradiciones de los hombres.",
+      icon: Sun
     },
   ];
 
@@ -54,28 +57,28 @@ const Team = () => {
         
         <Carousel
           setApi={setApi}
-          className="max-w-3xl mx-auto"
+          className="w-full max-w-4xl mx-auto"
           opts={{
-            align: "center",
+            align: "start",
             loop: true,
           }}
         >
-          <CarouselContent>
+          <CarouselContent className="h-full">
             {doctrinalPoints.map((point, index) => (
-              <CarouselItem key={index}>
+              <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.2 }}
                   viewport={{ once: true }}
-                  className="p-1"
+                  className="h-full"
                 >
-                  <Card className="border-2 border-church-primary/20">
-                    <CardContent className="p-8 text-center">
-                      <BookOpen className="w-12 h-12 mx-auto mb-4 text-church-primary" />
+                  <Card className="border-2 border-church-primary/20 h-full">
+                    <CardContent className="p-8 flex flex-col items-center justify-between h-full">
+                      <point.icon className="w-12 h-12 text-church-primary mb-4" />
                       <h3 className="text-2xl font-bold mb-4">{point.title}</h3>
-                      <p className="text-gray-600 mb-4">{point.description}</p>
-                      <p className="text-church-primary font-semibold italic">{point.verse}</p>
+                      <p className="text-gray-600 mb-4 text-center leading-relaxed">{point.description}</p>
+                      <p className="text-church-primary font-semibold italic text-center">{point.verse}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
