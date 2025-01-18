@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Search, Sun } from "lucide-react";
 
 const Team = () => {
   const [api, setApi] = useState(null);
@@ -17,16 +17,19 @@ const Team = () => {
       title: "Fidelidad a la Palabra",
       verse: '"Tu palabra es verdad." - Juan 17:17',
       description: "Nos comprometemos a mantener una doctrina pura y sin adulterar, basada únicamente en la Palabra de Dios.",
+      Icon: Search
     },
     {
       title: "Hablar donde la Biblia Habla",
       verse: '"Si alguno habla, hable conforme a las palabras de Dios." - 1 Pedro 4:11',
       description: "Nos mantenemos fieles al principio de hablar donde la Biblia habla y callar donde ella calla.",
+      Icon: BookOpen
     },
     {
       title: "Autoridad Divina",
       verse: '"Toda la Escritura es inspirada por Dios." - 2 Timoteo 3:16',
       description: "Seguimos los mandamientos de Dios, no las tradiciones de los hombres.",
+      Icon: Sun
     },
   ];
 
@@ -60,7 +63,7 @@ const Team = () => {
             loop: true,
           }}
         >
-          <CarouselContent>
+          <CarouselContent className="gap-6">
             {doctrinalPoints.map((point, index) => (
               <CarouselItem key={index}>
                 <motion.div
@@ -70,9 +73,9 @@ const Team = () => {
                   viewport={{ once: true }}
                   className="p-1"
                 >
-                  <Card className="border-2 border-church-primary/20">
-                    <CardContent className="p-8 text-center">
-                      <BookOpen className="w-12 h-12 mx-auto mb-4 text-church-primary" />
+                  <Card className={`border-2 border-church-primary/20 h-full ${point.title === "Autoridad Divina" ? "px-6" : point.title === "Fidelidad a la Palabra" ? "px-4" : "px-5"}`}>
+                    <CardContent className="p-8 text-center flex flex-col items-center justify-between h-full">
+                      <point.Icon className="w-12 h-12 mb-4 text-church-primary" />
                       <h3 className="text-2xl font-bold mb-4">{point.title}</h3>
                       <p className="text-gray-600 mb-4">{point.description}</p>
                       <p className="text-church-primary font-semibold italic">{point.verse}</p>
