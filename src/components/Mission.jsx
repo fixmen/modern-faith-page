@@ -1,85 +1,69 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, Users, Heart } from "lucide-react";
 
 const Mission = () => {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.5 }
+  const paragraphVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
-    <section className="py-20 bg-church-accent overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gradient-to-b from-church-accent to-white overflow-hidden">
+      <div className="container mx-auto px-4 max-w-4xl">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-6">¿Quiénes Somos?</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            Somos una comunidad de fe comprometida con la verdad bíblica y el amor fraternal. 
-            Nuestro camino comenzó hace más de dos décadas, y desde entonces nos dedicamos a 
-            servir a Dios y a nuestra comunidad.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">¿Quiénes Somos?</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.2 }}
-            className="bg-white p-8 rounded-lg shadow-lg"
+        <div className="space-y-12 text-lg text-gray-700 leading-relaxed">
+          <motion.p
+            variants={paragraphVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-white/50 backdrop-blur-sm p-6 rounded-lg shadow-sm"
           >
-            <Clock className="w-12 h-12 text-church-primary mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Nuestros Orígenes</h3>
-            <p className="text-gray-600">
-              Fundada en el compromiso con la verdad bíblica, nuestra iglesia ha crecido 
-              gracias a la fidelidad de Dios y la dedicación de nuestra comunidad.
-            </p>
-          </motion.div>
+            Somos una comunidad de fe arraigada en la verdad bíblica y el amor fraternal. 
+            Desde nuestros inicios, nos hemos dedicado a mantener la pureza de la doctrina 
+            apostólica, siguiendo el modelo de la iglesia del primer siglo. Nuestra jornada 
+            comenzó con un pequeño grupo de creyentes comprometidos con restaurar el 
+            cristianismo del Nuevo Testamento.
+          </motion.p>
 
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.4 }}
-            className="bg-white p-8 rounded-lg shadow-lg"
+          <motion.p
+            variants={paragraphVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-white/50 backdrop-blur-sm p-6 rounded-lg shadow-sm"
           >
-            <Heart className="w-12 h-12 text-church-primary mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Nuestra Misión</h3>
-            <p className="text-gray-600">
-              Buscamos compartir el amor de Cristo, formar discípulos y servir a 
-              nuestra comunidad a través de la enseñanza fiel de la Palabra.
-            </p>
-          </motion.div>
-        </div>
+            Nuestra misión es clara: compartir el mensaje transformador del evangelio y 
+            formar discípulos comprometidos con Cristo. Creemos en el poder de la Palabra 
+            de Dios para cambiar vidas y en la importancia de una comunidad que se apoya 
+            mutuamente en el camino de la fe. Nos esforzamos por ser un faro de esperanza 
+            en nuestra comunidad.
+          </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.6 }}
-            className="bg-white p-8 rounded-lg shadow-lg"
+          <motion.p
+            variants={paragraphVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="bg-white/50 backdrop-blur-sm p-6 rounded-lg shadow-sm"
           >
-            <Users className="w-12 h-12 text-church-primary mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Nuestros Valores</h3>
-            <p className="text-gray-600">
-              Nos fundamentamos en el amor, la integridad, la excelencia y el 
-              servicio, siguiendo el ejemplo de Cristo en todo lo que hacemos.
-            </p>
-          </motion.div>
-
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.8 }}
-            className="bg-white p-8 rounded-lg shadow-lg"
-          >
-            <MapPin className="w-12 h-12 text-church-primary mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Ubicación</h3>
-            <p className="text-gray-600">
-              Nos encontramos en el corazón de la ciudad, siendo un faro de 
-              esperanza y un lugar de encuentro para todos.
-            </p>
-          </motion.div>
+            Los valores que nos definen son el amor incondicional, la integridad en 
+            nuestras acciones, la fidelidad a las Escrituras y el servicio desinteresado. 
+            Creemos en la importancia de construir relaciones auténticas y en crear un 
+            espacio donde cada persona pueda crecer en su fe y desarrollar sus dones 
+            espirituales para la gloria de Dios.
+          </motion.p>
         </div>
       </div>
     </section>

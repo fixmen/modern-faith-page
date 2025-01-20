@@ -5,11 +5,11 @@ const Hero = () => {
     <div className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=2574&auto=format&fit=crop"
-          alt="Church background"
+          src="/lovable-uploads/24dfa7dd-f77b-4488-909e-df004859cae8.png"
+          alt="Puerta celestial"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30" />
       </div>
       
       <div className="container mx-auto px-4 z-10 text-center">
