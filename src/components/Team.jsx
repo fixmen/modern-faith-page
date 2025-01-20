@@ -73,11 +73,11 @@ const Team = () => {
                   viewport={{ once: true }}
                   className="p-1"
                 >
-                  <Card className={`border-2 border-church-primary/20 h-full ${point.title === "Autoridad Divina" ? "px-6" : point.title === "Fidelidad a la Palabra" ? "px-4" : "px-5"}`}>
-                    <CardContent className="p-8 text-center flex flex-col items-center justify-between h-full">
+                  <Card className="border-2 border-church-primary/20 h-full px-6">
+                    <CardContent className="p-8 text-center flex flex-col items-center justify-between min-h-[400px]">
                       <point.Icon className="w-12 h-12 mb-4 text-church-primary" />
                       <h3 className="text-2xl font-bold mb-4">{point.title}</h3>
-                      <p className="text-gray-600 mb-4">{point.description}</p>
+                      <p className="text-gray-600 mb-4 flex-grow">{point.description}</p>
                       <p className="text-church-primary font-semibold italic">{point.verse}</p>
                     </CardContent>
                   </Card>
