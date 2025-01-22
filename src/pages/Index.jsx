@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Mission from "../components/Mission";
 import Team from "../components/Team";
 import History from "../components/History";
+import Location from "../components/Location";
 
 const Index = () => {
   useEffect(() => {
@@ -15,6 +16,7 @@ const Index = () => {
       <Mission />
       <Team />
       <History />
+      <Location />
     </main>
   );
 };
